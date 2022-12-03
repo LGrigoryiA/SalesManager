@@ -9,8 +9,6 @@ public class SalesManager {
     }
 
 
-
-
     public int max() {
         int max = -1;
         for (int sale : sales) {
@@ -19,5 +17,27 @@ public class SalesManager {
             }
         }
         return max;
+    }
+
+    public int average() {
+        int max = -1;
+        for (int sale : sales) {
+            if (sale > max) {
+                max = sale;
+            }
+        }
+
+        int min = max;
+        for (int sale : sales) {
+            if (sale < min) {
+                min = sale;
+            }
+        }
+
+        int sum = 0;
+        for (int sale : sales) {
+            sum += sale;
+        }
+        return (sum - (max + min)) / ((sales.length) - 2);
     }
 }

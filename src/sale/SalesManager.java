@@ -2,16 +2,16 @@ package sale;
 
 public class SalesManager {
 
-    protected int[] sales;
+    protected long[] sales;
 
-    public SalesManager(int[] sales) {
+    public SalesManager(long[] sales) {
         this.sales = sales;
     }
 
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -19,23 +19,23 @@ public class SalesManager {
         return max;
     }
 
-    public int average() {
-        int max = -1;
-        for (int sale : sales) {
+    public long average() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
         }
 
-        int min = max;
-        for (int sale : sales) {
+        long min = max;
+        for (long sale : sales) {
             if (sale < min) {
                 min = sale;
             }
         }
 
-        int sum = 0;
-        for (int sale : sales) {
+        long sum = 0;
+        for (long sale : sales) {
             sum += sale;
         }
         return (sum - (max + min)) / ((sales.length) - 2);
